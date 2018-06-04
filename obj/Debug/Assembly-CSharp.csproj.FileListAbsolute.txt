@@ -1,0 +1,2 @@
+E:\IT\Unity\Projekty\StrefaKursow\TappyPlane\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+E:\IT\Unity\Projekty\StrefaKursow\TappyPlane\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
