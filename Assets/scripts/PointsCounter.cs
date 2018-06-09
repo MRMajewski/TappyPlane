@@ -9,15 +9,24 @@ public class PointsCounter : MonoBehaviour {
 
     void Start()
     {
+        SavePoints();
         RefreshText();
+    
     }
 
     public void IncrementPoints()
     {
         Points++;
+
+        SavePoints();
         RefreshText();
+   
     }
 
+    public void SavePoints()
+    {
+        PlayerPrefs.SetInt("currentPoints", Points);
+    }
 
 
     void RefreshText()

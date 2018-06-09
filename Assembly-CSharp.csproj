@@ -52,12 +52,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\CameraMovement.cs" />
+     <Compile Include="Assets\scripts\ChangeSceneWhenClicked.cs" />
      <Compile Include="Assets\scripts\GameOver.cs" />
+     <Compile Include="Assets\scripts\GameOverScore.cs" />
+     <Compile Include="Assets\scripts\MusicManager.cs" />
      <Compile Include="Assets\scripts\PlaneMovement.cs" />
      <Compile Include="Assets\scripts\PointsCounter.cs" />
      <Compile Include="Assets\scripts\RandomPlane.cs" />
-     <Compile Include="Assets\scripts\Reload.cs" />
      <Compile Include="Assets\scripts\Star.cs" />
+     <Compile Include="Assets\scripts\TerrainGenerator.cs" />
      <None Include="Assets\tappyplane\Spritesheet\sheet.xml" />
      <None Include="Assets\tappyplane\license.txt" />
      <None Include="Assets\kenney_musicjingles\License.txt" />
