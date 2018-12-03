@@ -14,7 +14,7 @@ public class PlaneMovement : MonoBehaviour {
     public float Speed = 2f;
     void Update() {
 
-        var targetAngle = Input.GetKey(KeyCode.Space)
+        var targetAngle = Input.GetMouseButton(0)
             ? FlyingAngle : FallingAngle;
         CurrentAngle = Mathf.Lerp(CurrentAngle, targetAngle, Time.deltaTime*2f);
 

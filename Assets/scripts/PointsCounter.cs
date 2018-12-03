@@ -11,7 +11,9 @@ public class PointsCounter : MonoBehaviour {
     {
         SavePoints();
         RefreshText();
-    
+       
+
+
     }
 
     public void IncrementPoints()
@@ -32,6 +34,14 @@ public class PointsCounter : MonoBehaviour {
     void RefreshText()
     {
         GetComponent<Text>().text = Points + " points";
+
+        if (Points < 2) GetComponent<Text>().color = Color.black;
+
+        else if (Points < 6) GetComponent<Text>().color = Color.blue;
+
+        else GetComponent<Text>().color = Color.yellow;
+
+
     }
 
 }
