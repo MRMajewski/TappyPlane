@@ -11,10 +11,13 @@ public class TerrainGenerator : MonoBehaviour {
     private List<GameObject> CurrentBlocks = new List<GameObject>();
     private int BlockIndex = 0;
 
+    public int NumberOfBlocksPassed;
 
     public float blockWidth = 7.4f;
 	// Use this for initialization
 	void Start () {
+
+       
 		
         for (int i=0; i<4;i++)
         {
@@ -47,11 +50,16 @@ public class TerrainGenerator : MonoBehaviour {
 
     private void OnTriggerEnter2D (Collider2D collider)
     {
+
         GenerateBlock();
 
         var block = CurrentBlocks.First();
         Destroy(block);
         CurrentBlocks.RemoveAt(0);
+
+
+        NumberOfBlocksPassed++;
+           
     }
 
 }

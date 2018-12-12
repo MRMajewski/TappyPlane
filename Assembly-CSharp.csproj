@@ -55,9 +55,13 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\CameraMovement.cs" />
      <Compile Include="Assets\scripts\ChangeSceneWhenClicked.cs" />
+     <Compile Include="Assets\scripts\DashMovement.cs" />
+     <Compile Include="Assets\scripts\GameManager.cs" />
+     <Compile Include="Assets\scripts\GameManager1.cs" />
      <Compile Include="Assets\scripts\GameOver.cs" />
      <Compile Include="Assets\scripts\GameOverScore.cs" />
      <Compile Include="Assets\scripts\MusicManager.cs" />
+     <Compile Include="Assets\scripts\PauseGame.cs" />
      <Compile Include="Assets\scripts\PlaneMovement.cs" />
      <Compile Include="Assets\scripts\PointsCounter.cs" />
      <Compile Include="Assets\scripts\RandomPlane.cs" />
