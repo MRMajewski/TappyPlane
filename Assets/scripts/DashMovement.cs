@@ -10,7 +10,7 @@ public class DashMovement : MonoBehaviour {
     private float dashTime;
     public float startDashTime;
 
-    public GameObject dashEffect;
+    public ParticleSystem dashEffect;
     
 	// Use this for initialization
 	void Start () {

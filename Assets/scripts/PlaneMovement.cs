@@ -10,6 +10,8 @@ public class PlaneMovement : MonoBehaviour {
 
     public float CurrentAngle = 0f;
 
+    public int BlocksPassed=0;
+
 
     public float Speed = 2f;
     void Update() {
@@ -18,7 +20,7 @@ public class PlaneMovement : MonoBehaviour {
             ? FlyingAngle : FallingAngle;
         CurrentAngle = Mathf.Lerp(CurrentAngle, targetAngle, Time.deltaTime*2f);
 
-        transform.rotation = Quaternion.Euler(Vector3.forward * CurrentAngle);
+      //  transform.rotation = Quaternion.Euler(Vector3.forward * CurrentAngle);
         transform.Translate(Vector3.right * Speed*Time.deltaTime);
 
         if(Mathf.Abs(transform.position.y) > 2f)
@@ -26,5 +28,12 @@ public class PlaneMovement : MonoBehaviour {
             SceneManager.LoadScene("gameover");
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+     //   BlocksPassed++;
+     //   Debug.Log("Minąłeś: "+BlocksPassed+" bloków");
+    }
+
 }
  

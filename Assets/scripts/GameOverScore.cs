@@ -58,8 +58,8 @@ public class GameOverScore : MonoBehaviour {
     {
         var currentPoints = GetCurrentPoints();
         var recordPoints = PlayerPrefs.GetInt("recordPoints", 0);
-        Debug.Log(currentPoints);
-        Debug.Log(recordPoints);
+    //    Debug.Log(currentPoints);
+     //   Debug.Log(recordPoints);
 
         bool isRecord = currentPoints  > recordPoints;
 

@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour {
 
+
+    [SerializeField]
+    Transform respawnPlace;
+
     public GameObject[] TerrainBlocks;
     public GameObject InitialBlock;
 
     private List<GameObject> CurrentBlocks = new List<GameObject>();
     private int BlockIndex = 0;
 
-    public int NumberOfBlocksPassed;
-
     public float blockWidth = 7.4f;
 	// Use this for initialization
 	void Start () {
 
-       
+    //    respawnPlace.position = FindObjectOfType<Plane>().transform.position;
 		
         for (int i=0; i<4;i++)
         {
@@ -39,10 +41,10 @@ public class TerrainGenerator : MonoBehaviour {
 
         if (BlockIndex < 2) prefab = InitialBlock;
 
-        var block = Instantiate(prefab);
+        var block = Instantiate(prefab, Vector3.right * BlockIndex * blockWidth,Quaternion.identity);
         CurrentBlocks.Add(block);
 
-        block.transform.position = Vector2.right * BlockIndex * blockWidth;
+      //  block.transform.position = Vector3.right * BlockIndex * blockWidth;
         GetComponent<BoxCollider2D>().transform.position = Vector2.right * (BlockIndex-2) * blockWidth;
 
         BlockIndex++;
@@ -56,9 +58,6 @@ public class TerrainGenerator : MonoBehaviour {
         var block = CurrentBlocks.First();
         Destroy(block);
         CurrentBlocks.RemoveAt(0);
-
-
-        NumberOfBlocksPassed++;
            
     }
 

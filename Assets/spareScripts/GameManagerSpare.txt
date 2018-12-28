@@ -1,0 +1,105 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+
+    public TerrainGenerator[] TerrainGenerators;
+
+    [SerializeField]
+    Transform respawnPlace;
+    
+    private TerrainGenerator ActualTerrainGenerator;
+    //private TerrainGenerator generator;
+
+        [SerializeField]
+    TerrainGenerator generator;
+
+    [SerializeField]
+    TerrainGenerator FirstGenerator;
+
+    private int index;
+    int blockPassed;
+
+    [SerializeField]
+    Plane plane;
+
+    private float distance;
+
+
+    // Use this for initialization
+    void Awake()
+    {
+        index = UnityEngine.Random.Range(0, TerrainGenerators.Length);
+        //generator = TerrainGenerators[index];
+        
+        ActualTerrainGenerator = Instantiate(FirstGenerator, respawnPlace.position, Quaternion.identity);
+        //Instantiate(plane, respawnPlace.position, Quaternion.identity);
+
+
+        // ActualTerrainGenerator.transform.localPosition = respawnPlace.position; 
+        //  ActualTerrainGenerator = Instantiate(generator, plane.transform.position , Quaternion.identity);
+        // Vector3.right * 11.025f
+        blockPassed = plane.BlocksPassed;
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        blockPassed = plane.BlocksPassed;
+        var PlanePosition = plane.transform.position;
+        Debug.Log("Minąłeś: " + blockPassed + " bloków");
+      //  Debug.Log("Pozycja kamery: " + respawnPlace.position);
+
+        //  distance = Vector2.Distance(transform.position, plane.transform.position);
+
+
+
+        if (blockPassed == 4)
+        {
+            plane.BlocksPassed = 0;
+            Debug.Log("UWAGA");
+
+            Destroy(ActualTerrainGenerator);
+            index = UnityEngine.Random.Range(0, TerrainGenerators.Length);
+
+           // generator = TerrainGenerators[index];
+          //    Instantiate(plane, PlanePosition + Vector3.right*2f, Quaternion.identity);
+            ActualTerrainGenerator = Instantiate(generator, PlanePosition + Vector3.right * 600.35f,Quaternion.identity);
+           // ActualTerrainGenerator.transform.localPosition = PlanePosition + Vector3.right * 600.35f;
+            
+           
+            //  ActualTerrainGenerator = Instantiate(generator, PlanePosition + Vector3.right * 17.35f, Quaternion.identity);
+        }
+/*
+        if (blockPassed == 13)
+        {
+            Debug.Log("UWAGA");
+
+            Destroy(ActualTerrainGenerator);
+
+            index = UnityEngine.Random.Range(0, TerrainGenerators.Length);
+            generator = TerrainGenerators[index];
+
+            ActualTerrainGenerator = Instantiate(generator, plane.transform.position + Vector3.right * 7.35f, Quaternion.identity);
+        }
+        // Debug.Log("Odległość: " + distance);
+
+
+
+        /*    if (distance / 7.35 == 15)
+            {
+                var index = Random.Range(0, TerrainGenerators.Length);
+                var generator = TerrainGenerators[index];
+
+                Destroy(ActualTerrainGenerator);
+
+                ActualTerrainGenerator = Instantiate(generator, plane.transform.position + Vector3.right * 3.65f, Quaternion.identity);
+            }
+    }
+    */
+    }
+}

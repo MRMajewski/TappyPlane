@@ -1,0 +1,64 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+
+    
+    public Transform respawnPlace;
+    
+    private TerrainGenerator actualterraingenerator;
+
+    
+    public TerrainGenerator generator;
+
+    
+    public TerrainGenerator firstGenerator;
+
+    private int index;
+    int blockPassed;
+
+    [SerializeField]
+    Plane plane;
+
+
+    void Awake()
+    {
+	
+        actualterraingenerator = Instantiate(firstGenerator, respawnPlace.position, Quaternion.identity);
+        blockPassed = plane.BlocksPassed;
+    }
+
+
+ 
+    void Update()
+    {
+        Debug.Log("pozycja GENERATORA:" + actualterraingenerator.transform.position);
+        blockPassed = plane.BlocksPassed;       
+        Debug.Log("Minąłeś: " + blockPassed + " bloków");
+  
+
+        if (blockPassed == 3)
+        {
+            plane.BlocksPassed = 0;
+     
+
+    
+            Destroy(actualterraingenerator.gameObject);
+            Debug.Log("DESTROY");
+          
+
+            Debug.Log("Minąłeś: " + blockPassed + " bloków");
+           
+            actualterraingenerator = Instantiate(generator, respawnPlace.position + Vector3.right * 10f,Quaternion.identity);
+            Debug.Log("pozycja GENERATORA:" + actualterraingenerator.transform.position);
+          
+
+            actualterraingenerator.transform.position = respawnPlace.position + Vector3.right * 20f;
+            
+            Debug.Log("pozycja GENERATORA:" + actualterraingenerator.transform.position);
+        }
+    }
+}
