@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1151282338002714}
+  m_IsPrefabAsset: 1
+--- !u!1 &1151282338002714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4517439213281430}
+  - component: {fileID: 114526773543145644}
+  - component: {fileID: 61092191762782208}
+  m_Layer: 0
+  m_Name: CityGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4517439213281430
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151282338002714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 22.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61092191762782208
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151282338002714}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.7, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.69, y: 5.12}
+  m_EdgeRadius: 0
+--- !u!114 &114526773543145644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151282338002714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae55a27ef12fa8c4b88344b4bcd61ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainBlocks:
+  - {fileID: 1211719858905412, guid: 794bb1a3cd47b6e4e8715b7d7340e1a7, type: 2}
+  - {fileID: 1798082701183218, guid: 8afef0aa7d523a249a2b1c1223685f0c, type: 2}
+  - {fileID: 1060638849122424, guid: 49b22bcc69ce8444db4b5edf870ecc17, type: 2}
+  - {fileID: 1987605374391802, guid: c160cb4a44a0bef49afa644381c7a0c9, type: 2}
+  - {fileID: 1679183714048540, guid: f71b35dff3267a4469fbb97e568503bb, type: 2}
+  - {fileID: 1281658856776442, guid: c54aef14c7118a44a908bbb43efc1b71, type: 2}
+  - {fileID: 1125672608728296, guid: e8907a99d88fbe24f8c31fc4149954b5, type: 2}
+  - {fileID: 1624905119870656, guid: 4a592cfae5eb4f248ab9fcaba27ff545, type: 2}
+  - {fileID: 1376274313349874, guid: d5076e84735541b448129b54008d76a9, type: 2}
+  - {fileID: 1313550788506750, guid: cd843f68e0710e74f963068d5769b70f, type: 2}
+  - {fileID: 1388635123546092, guid: 52c1f7d37669d254d94346b3722269fc, type: 2}
+  - {fileID: 1837402017660992, guid: 00743d64a18b6b448b53e4459299f166, type: 2}
+  - {fileID: 1954276129726054, guid: c3dea11ccb4d33c41a03f9ff83868a3a, type: 2}
+  InitialBlock: {fileID: 1867123162609612, guid: 9220a2cf22eff2849a2cc1dea1664894,
+    type: 2}
+  blockWidth: 7.4
