@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("DESTROY");
             //        index = UnityEngine.Random.Range(0, TerrainGenerators.Length);
 
-            Debug.Log("Minąłeś: " + blockPassed + " bloków");
+           // Debug.Log("Minąłeś: " + blockPassed + " bloków");
             //    Instantiate(plane, PlanePosition + Vector3.right*2f, Quaternion.identity);
             ActualTerrainGenerator = Instantiate(generator, respawnPlace.position + Vector3.right * 10f,Quaternion.identity);
             Debug.Log("pozycja GENERATORA:" + ActualTerrainGenerator.transform.position);
@@ -68,7 +68,8 @@ public class GameManager : MonoBehaviour
 
             ActualTerrainGenerator.transform.position = respawnPlace.position + Vector3.right * 20f;
             // ActualTerrainGenerator.transform.localPosition = PlanePosition + Vector3.right * 600.35f;
-            Debug.Log("pozycja GENERATORA:" + ActualTerrainGenerator.transform.position);
+          //  Debug.Log("pozycja GENERATORA:" + ActualTerrainGenerator.transform.position);
         }
+
     }
 }

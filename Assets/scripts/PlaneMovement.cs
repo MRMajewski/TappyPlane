@@ -20,7 +20,7 @@ public class PlaneMovement : MonoBehaviour {
             ? FlyingAngle : FallingAngle;
         CurrentAngle = Mathf.Lerp(CurrentAngle, targetAngle, Time.deltaTime*2f);
 
-      //  transform.rotation = Quaternion.Euler(Vector3.forward * CurrentAngle);
+        transform.rotation = Quaternion.Euler(Vector3.forward * CurrentAngle);
         transform.Translate(Vector3.right * Speed*Time.deltaTime);
 
         if(Mathf.Abs(transform.position.y) > 2f)
