@@ -677,11 +677,11 @@ MonoBehaviour:
   Record: {fileID: 2068768595}
   Medals:
   - Image: {fileID: 21300000, guid: 9aead215d1c31da42a03ffa8925db062, type: 3}
-    MinimumPoints: 0
+    MinimumPoints: 10
   - Image: {fileID: 21300000, guid: cfb8c878adf574944822c5bd4f8e0bf4, type: 3}
-    MinimumPoints: 2
+    MinimumPoints: 30
   - Image: {fileID: 21300000, guid: d6cfd960b7daf62439a79b6e6f916160, type: 3}
-    MinimumPoints: 5
+    MinimumPoints: 50
 --- !u!114 &1950256223
 MonoBehaviour:
   m_ObjectHideFlags: 0
