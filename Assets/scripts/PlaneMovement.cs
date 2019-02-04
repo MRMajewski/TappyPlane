@@ -12,7 +12,40 @@ public class PlaneMovement : MonoBehaviour {
 
     public int BlocksPassed=0;
 
+    /*
+    public float tapSpeed = 0.5f; //in seconds
 
+    private float lastTapTime = 0;
+
+
+    void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+
+            if ((Time.time - lastTapTime) < tapSpeed)
+            {
+
+                Debug.Log("Double tap");
+
+            }
+
+            lastTapTime = Time.time;
+
+        }
+
+    }
+    */
+    public float tapSpeed = 0.5f; //in seconds
+
+    private float lastTapTime = 0;
+
+
+    private void Start()
+    {
+        
+    }
     public float Speed = 2f;
     void Update() {
 
@@ -27,7 +60,22 @@ public class PlaneMovement : MonoBehaviour {
         {
             SceneManager.LoadScene("gameover");
         }
-	}
+
+    /*    if (Input.GetMouseButtonUp(0))
+        {
+
+            if ((Time.time - lastTapTime) < tapSpeed)
+            {
+                FindObjectOfType<DashMovement>().Dash();
+                Debug.Log("Double tap");
+
+            }
+
+            lastTapTime = Time.time;
+
+        } */
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {

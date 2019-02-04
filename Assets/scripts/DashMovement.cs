@@ -17,16 +17,21 @@ public class DashMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         dashTime = startDashTime;
 	}
-	
-	// Update is called once per frame
-/*	void Update () {
 
-        if (Input.GetMouseButton(0)) ;
-        {
-            Dash();
-        }
-		
-	} */
+    // Update is called once per frame
+    /*	void Update () {
+
+            if (Input.GetMouseButton(0)) ;
+            {
+                Dash();
+            }
+
+        } */
+
+     
+
+
+
 
     public void Dash()
     {

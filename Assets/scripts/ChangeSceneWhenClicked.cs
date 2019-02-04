@@ -11,4 +11,14 @@ void OnMouseDown()
     {
         SceneManager.LoadScene(levelName);
     }
+
+   public void SceneChanger()
+    {
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
