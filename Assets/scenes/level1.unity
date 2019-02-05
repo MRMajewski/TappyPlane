@@ -376,17 +376,17 @@ PrefabInstance:
     - target: {fileID: 114008037303690360, guid: 6860c9b77ac6890449c16452e1ebcfd5,
         type: 3}
       propertyPath: BronzePoints
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114008037303690360, guid: 6860c9b77ac6890449c16452e1ebcfd5,
         type: 3}
       propertyPath: SilverPoints
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114008037303690360, guid: 6860c9b77ac6890449c16452e1ebcfd5,
         type: 3}
       propertyPath: GoldPoints
-      value: 5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 224927935744884518, guid: 6860c9b77ac6890449c16452e1ebcfd5,
         type: 3}
