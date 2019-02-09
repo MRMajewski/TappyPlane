@@ -5,49 +5,50 @@ using UnityEngine;
 
 public class DashMovement : MonoBehaviour {
 
-    private Rigidbody2D rb;
-    public float dashSpeed;
+    public Vector3 DashVector;
     private float dashTime;
     public float startDashTime;
 
+    public GameManager GameManager;
+
     public GameObject dashEffect;
-    
-	// Use this for initialization
+
+    private bool _isDashing;
+    private float _lerpTime = 0.5f;
+
 	void Start () {
-        rb = GetComponent<Rigidbody2D>();
+
         dashTime = startDashTime;
 	}
-
-    // Update is called once per frame
-    /*	void Update () {
-
-            if (Input.GetMouseButton(0)) ;
-            {
-                Dash();
-            }
-
-        } */
-
-     
-
-
 
 
     public void Dash()
     {
-      //  if (dashTime >= 0) dashTime -= Time.deltaTime;
-      //  else dashTime -= Time.deltaTime;
+        if (!_isDashing)
+        {
+            _isDashing = true;
+            StartCoroutine(Dashing());
+            Debug.Log("Dash");
+        }
+      
+    }
 
-       // rb.velocity = Vector2.right * dashTime;
-       
-        transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
+    private IEnumerator Dashing()
+    {
         Particle();
+        transform.position += DashVector;
+        GameManager.CameraMovement.StopCamera();
+        GameManager.CameraMovement.StartLerpingToTrackedObject(_lerpTime, transform.position);
+        GameManager.MonkMovement.SetFlyingState(false);
+        yield return new WaitForSeconds(_lerpTime);
+        GameManager.MonkMovement.SetFlyingState(true);
+        GameManager.CameraMovement.ResumeCamera();
+        _isDashing = false;
       
     }
 
     public void Particle()
-    {
-        // Instantiate(dashEffect, transform.position + Vector3.right * 2.7f, Quaternion.Euler(0,-90,0));
+    { 
         Instantiate(dashEffect, transform.position + Vector3.right * 0.2f, Quaternion.Euler(0, 0, 0));
     }
 }

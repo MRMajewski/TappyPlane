@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Medal
@@ -10,7 +11,6 @@ public class Medal
     public Sprite Image;
     public int MinimumPoints;
 }
-
 
 
 public class GameOverScore : MonoBehaviour {
@@ -22,8 +22,6 @@ public class GameOverScore : MonoBehaviour {
     public Medal[] Medals;
 
 
-
-	// Use this for initialization
 	void Start () {
         RefreshPoints();
         RefreshMedal();
@@ -34,6 +32,11 @@ public class GameOverScore : MonoBehaviour {
     int GetCurrentPoints()
     {
        return PlayerPrefs.GetInt("currentPoints", 0);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("level1");
     }
 
     void RefreshPoints()
@@ -58,8 +61,8 @@ public class GameOverScore : MonoBehaviour {
     {
         var currentPoints = GetCurrentPoints();
         var recordPoints = PlayerPrefs.GetInt("recordPoints", 0);
-    //    Debug.Log(currentPoints);
-     //   Debug.Log(recordPoints);
+
+
 
         bool isRecord = currentPoints  > recordPoints;
 
@@ -68,7 +71,6 @@ public class GameOverScore : MonoBehaviour {
 
         Record.SetActive(isRecord);//Obiekt aktywny gdy będzie rekord isRecord=true
 
-        //Record.GetComponent<Renderer>().enabled = isRecord; //komponent widoczny gdy będzie spełnione isRecord tzn gdy będzie rekord
 
     }
 

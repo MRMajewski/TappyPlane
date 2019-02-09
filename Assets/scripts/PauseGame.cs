@@ -6,42 +6,29 @@ using UnityEngine.UI;
 public class PauseGame : MonoBehaviour
 {
 
-    public static bool isPaused = false;
+    public static bool isPaused;
 
     [SerializeField]
-    Text ButtonText;
+    private Text ButtonText;
 
-    [SerializeField]
-    Canvas canvas;
-
-
-
-    void Start()
+    private void Start()
     {
-        Text ButtonText = GetComponentInChildren<Text>();
-       // canvas.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+    //    Text ButtonText = GetComponentInChildren<Text>();
     }
 
     public void Action()
     {
-        if (!isPaused)
-            Pause();
+        if (!isPaused) Pause();
 
         else Resume();
     }
 
     public void Pause()
     {
+        Debug.Log("pauza");
         Time.timeScale = 0;
         isPaused = true;
-        ButtonText.text = "Resume";
-       // canvas.enabled = true;
+        ButtonText.text = "Resume";   
     }
 
     public void Resume()
@@ -49,7 +36,7 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 1;
         isPaused = false;
          ButtonText.text = "Pause";
-       // canvas.enabled = false;
+      
     }
 }
 

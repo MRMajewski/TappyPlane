@@ -2,10 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
+    public UiManager UiManager;
+    public CameraMovement CameraMovement;
+    public MonkMovement MonkMovement;
    // public TerrainGenerator[] TerrainGenerators;
 
     [SerializeField]
@@ -25,13 +29,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Plane plane;
 
+    public static void InitLoseGame()
+    {
+        SceneManager.LoadScene("gameover");
+    }
+
 
     void Awake()
     {
+        UiManager.OpenInstructionsUi();
+        MonkMovement.SetFlyingState(true);
         //      index = UnityEngine.Random.Range(0, TerrainGenerators.Length);
         //generator = TerrainGenerators[index];
-       
-        ActualTerrainGenerator = Instantiate(FirstGenerator, respawnPlace.position, Quaternion.identity);
+
+     //   ActualTerrainGenerator = Instantiate(FirstGenerator, respawnPlace.position, Quaternion.identity);
         //Instantiate(plane, respawnPlace.position, Quaternion.identity);
 
 
@@ -45,7 +56,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
         Debug.Log("pozycja GENERATORA:" + ActualTerrainGenerator.transform.position);
+#endif
         blockPassed = plane.BlocksPassed;       
         Debug.Log("Minąłeś: " + blockPassed + " bloków");
      //   Debug.Log("Minąłeś: " + respawnPlace.position);

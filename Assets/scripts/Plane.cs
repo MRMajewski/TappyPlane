@@ -5,7 +5,7 @@ using UnityEngine;
 public class Plane : MonoBehaviour {
 
     
-    public PlaneMovement PlaneMovement;
+    public MonkMovement PlaneMovement;
 
     [SerializeField]
     DashMovement DashMovement;
